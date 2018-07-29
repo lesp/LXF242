@@ -25,6 +25,10 @@ def update_details():
     Visit_Amazon = PushButton(details, text="Visit Amazon", command=openAmazon,grid=[0,8], align="left")
     return ISBN13
 
+def clear_input():
+    input_box.value = ""
+    input_box.focus()
+
 def openAmazon():
     global ISBN13
     URL = "https://www.amazon.co.uk/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="
@@ -36,5 +40,5 @@ info = Text(app, text="Scan or type the ISBN 13 digit code to search", enabled=T
 input_box = TextBox(app, grid=[1,0])
 input_box.focus()
 update = PushButton(app, command=update_details, text="Click here to search", grid=[2,0])
-
+clear = PushButton(app, command=clear_input, text="Click to clear", grid=[2,1])
 app.display()
