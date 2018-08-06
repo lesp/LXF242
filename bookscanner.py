@@ -1,8 +1,9 @@
-import isbnlib
-from guizero import App, Text, PushButton, TextBox, Window, Picture
-import webbrowser
+import isbnlib, webbrowser
+from guizero import App, Text, PushButton, TextBox, Window
+
+
 global ISBN13
-global app
+
 
 def update_details():
     global ISBN13
@@ -20,7 +21,6 @@ def update_details():
     ISBN13Data = Text(details, text="ISBN-13: "+ISBN13, grid=[0,4], align="left")
     Description = Text(details, text="Description: "+description, grid=[0,5], align="left")
     Visit_Amazon = PushButton(details, text="Visit Amazon", command=openAmazon,grid=[0,8], align="left")
-    return ISBN13
 
 def clear_input():
     input_box.value = ""
